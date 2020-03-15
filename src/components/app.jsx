@@ -1,8 +1,12 @@
 import React from "react"
-// import { Route, Router} from "react-router-dom"
+import { Route } from "react-router-dom"
+
 
 import Header from "./common/header"
-import Login  from "./login/login";
+import Signup  from "./login/reg";
+import Login from "./login/login";
+
+import Home from "./../components/home/home";
 
 class App extends React.Component{
   constructor(props){
@@ -13,7 +17,9 @@ class App extends React.Component{
     return(
       <>
       <Header />
-       <Login/>     
+       <Home/>
+      {/* <Route path="/login" component={Login}/>
+      <Route path="/signup" component={Signup}/> */}
       </>
     )
   }

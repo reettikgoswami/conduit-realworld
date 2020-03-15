@@ -1,4 +1,6 @@
 import React from "react"
+import {Link} from "react-router-dom";
+
 
 import {FaCuttlefish} from "react-icons/fa";
 import "../../assets/stylesheets/header.scss"
@@ -13,17 +15,17 @@ class Header extends React.Component{
   render(){
     return (
       <header >
-          <div className="header_container flex">
-            <a className="logo_icon_wrapper" href="">
+          <div className="header_container header_flex">
+            <Link className="logo_icon_wrapper" href="">
             <FaCuttlefish /><h1 className="logo">onduit</h1>
-            </a>
+            </Link>
            <div>
           <nav className="header_nav">
-            <a href="">home</a>
-            <a href="">new post</a>
-            <a href="">setting</a>
-            <a href="">login</a>
-            <a className="signup_btn" href="">sign up</a>
+            <Link to="/">home</Link>
+            <Link to="">new post</Link>
+            <Link to="">setting</Link>
+            <Link to="/login">login</Link>
+            <Link to="/signup" className="signup_btn" >sign up</Link>
           </nav>
            </div>
           </div> 

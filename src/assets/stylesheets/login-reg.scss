@@ -1,0 +1,181 @@
+.login_reg_container {
+  max-width: 800px;
+  border-radius: 3px;
+  padding: 10px 0;
+  text-align: center;
+  margin: 0 auto;
+  margin-top: 80px;
+  background-color: white;
+  box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.1);
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -ms-border-radius: 3px;
+  -o-border-radius: 3px;
+}
+
+.Login_header {
+  display: block;
+  text-align: center;
+  font-size: 20px;
+  color: #46535e;
+  font-weight: 700;
+  margin: .67rem 0;
+}
+
+.login_flex_container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+.login_col_2_1 {
+  display: inline-block;
+  padding: 10px 20px 20px 30px;
+  width: 46%;
+  a {
+    text-decoration: none;
+  }
+}
+
+.login_col_2_1 input {
+  box-sizing: border-box;
+  display: block;
+  width: 100%;
+  border: 1px solid #ddd;
+  margin: 15px 0 0 0;
+  padding: 10px 0px 10px 45px;
+  background-color: transparent;
+  // background-color: rgb(232, 240, 254);
+  color: -internal-light-dark-color(black, white) !important;
+  border-radius: 3px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -ms-border-radius: 3px;
+  -o-border-radius: 3px;
+}
+
+.profile_wrapper {
+  position: relative;
+}
+
+.profile_wrapper .icon {
+  position: absolute;
+  left: 15px;
+  top: 10px;
+  color: #7e8183;
+}
+
+
+.login_col_2_1 .sign_up_btn {
+  background-color: #f5f6f6;
+  padding: 10px 30px;
+  border: 1px solid #f5f6f6;
+  display: inline-block;
+  font-size: 16px;
+  font-weight: 700;
+  color: #666;
+  text-transform: capitalize;
+  margin: 30px 0 0 0;
+  cursor: pointer;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+}
+
+.login_col_2_1 .login_btn {
+  background-color: #33adff;
+  padding: 10px 30px;
+  border: 1px solid #33adff;
+  display: inline-block;
+  font-size: 16px;
+  font-weight: 700;
+  color: white;
+  text-transform: capitalize;
+  margin: 30px 0 0 0;
+  cursor: pointer;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+}
+
+.login_bottom_heading {
+  text-align: right;
+  margin: 10px 0 0 0;
+  color: #46535e;
+  font-size: 12px;
+  a {
+    text-decoration: none;
+  }
+}
+
+.login_passport_btn_wrapper {
+  margin-top: 25px;
+  display: flex;
+  align-items: center;
+  height: 40px;
+  width: 240px;
+  font-size: 14px;
+  color: white;
+  position: relative;
+}
+
+.login_passport_btn {
+  display: flex;
+  padding: 10px 0px;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  font-size: 14px;
+  padding-left: 60px;
+  text-align: center;
+  border-radius: 3px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -ms-border-radius: 3px;
+  -o-border-radius: 3px;
+}
+
+.login_passport_btn_wrapper .icon {
+  position: absolute;
+  left: 20px;
+  top: 15px;
+}
+
+.login_passport_btn_wrapper .icon_g {
+  position: absolute;
+  left: 20px;
+  top: 15px;
+  color: #444;
+}
+
+.FB_btn {
+  background: #3a5795;
+}
+
+.github_btn {
+  background-color: #444;
+}
+
+.google_btn {
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.32);
+  color: #444;
+}
+
+@media (max-width: 600px){
+  html{
+    font-size: 14px;
+  }
+  .passportAuth_mobile_view{
+    margin-left: 80px;
+  }
+  .login_col_2_1 {
+    display: inline-block;
+    padding: 10px 20px 20px 30px;
+    width: 80%;
+    text-align: center;
+  }
+}
