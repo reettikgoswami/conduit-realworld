@@ -32,6 +32,7 @@
   display: inline-block;
   padding: 10px 20px 20px 30px;
   width: 46%;
+
   a {
     text-decoration: none;
   }
@@ -107,6 +108,7 @@
   margin: 10px 0 0 0;
   color: #46535e;
   font-size: 12px;
+
   a {
     text-decoration: none;
   }
@@ -165,13 +167,15 @@
   color: #444;
 }
 
-@media (max-width: 600px){
-  html{
+@media (max-width: 600px) {
+  html {
     font-size: 14px;
   }
-  .passportAuth_mobile_view{
+
+  .passportAuth_mobile_view {
     margin-left: 80px;
   }
+
   .login_col_2_1 {
     display: inline-block;
     padding: 10px 20px 20px 30px;

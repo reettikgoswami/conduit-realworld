@@ -1,31 +1,32 @@
 @import "./reset.scss";
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:400,400i,600,600i,700,700i&display=swap');
 
-body{
+body {
   font-size: 16px;
   font-family: 'Open Sans', sans-serif;
   word-spacing: 1px;
   background-color: #ecf0f9;
 }
+
 *,
 *::before,
-*::after{
+*::after {
   box-sizing: border-box;
 }
 
-
 // spinner
-
-.loader_postition{
+.loader_postition {
   text-align: center;
   margin-top: 30px;
 }
+
 .lds-facebook {
   display: inline-block;
   position: relative;
   width: 20px;
   height: 20px;
 }
+
 .lds-facebook div {
   display: inline-block;
   position: absolute;
@@ -34,24 +35,30 @@ body{
   background: #4C9CDF;
   animation: lds-facebook 1.2s cubic-bezier(0, 0.5, 0.5, 1) infinite;
 }
+
 .lds-facebook div:nth-child(1) {
   left: 8px;
   animation-delay: -0.24s;
 }
+
 .lds-facebook div:nth-child(2) {
   left: 32px;
   animation-delay: -0.12s;
 }
+
 .lds-facebook div:nth-child(3) {
   left: 56px;
   animation-delay: 0;
 }
+
 @keyframes lds-facebook {
   0% {
     top: 8px;
     height: 64px;
   }
-  50%, 100% {
+
+  50%,
+  100% {
     top: 24px;
     height: 32px;
   }
@@ -60,88 +67,100 @@ body{
 //================================
 
 
-header{
-  background-color:#323754;
+header {
+  background-color: #323754;
   height: 3.125rem;
   position: relative;
   font-size: 1rem;
-  width: 100%;  
+  width: 100%;
 }
-.header_container{
-   max-width: 68.75rem;
-   margin: 0 auto;
-   height: 50px;
+
+.header_container {
+  max-width: 68.75rem;
+  margin: 0 auto;
+  height: 50px;
 }
-.header_flex{
+
+.header_flex {
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
-.logo_icon_wrapper{
+
+.logo_icon_wrapper {
   display: flex;
-  color: rgba(229,231,232,0.75);
+  color: rgba(229, 231, 232, 0.75);
   text-decoration: none;
   display: flex;
   align-items: center;
   font-size: 24px;
   font-weight: 600;
 }
-.logo{
-   font-size: 24px;
-   font-weight: 600;
-   color: rgba(229,231,232,0.75);
-   display: flex;
-   align-items: center;
-}
-.header_nav {
-  a{
-  color: rgba(229,231,232,0.75);
-  text-transform: uppercase;
-  font-size: .875rem;
-  margin: .625rem;
-  text-decoration: none;
+
+.logo {
+  font-size: 24px;
   font-weight: 600;
+  color: rgba(229, 231, 232, 0.75);
+  display: flex;
+  align-items: center;
+}
+
+.header_nav {
+  a {
+    color: rgba(229, 231, 232, 0.75);
+    text-transform: uppercase;
+    font-size: .875rem;
+    margin: .625rem;
+    text-decoration: none;
+    font-weight: 600;
   }
 }
-.signup_btn{
+
+.signup_btn {
   //background-color: yellow;
   color: #f60;
   border: 1px solid #f60;
   padding: 0.3125rem .625rem;
   line-height: 1.875rem;
   font-size: 600;
-  border-radius:.3125rem;
+  border-radius: .3125rem;
   transition: 300ms;
   -webkit-transition: 300ms;
   -moz-transition: 300ms;
   -ms-transition: 300ms;
   -o-transition: 300ms;
-  -webkit-border-radius:.3125rem;
-  -moz-border-radius:.3125rem;
-  -ms-border-radius:.3125rem;
-  -o-border-radius:.3125rem;
+  -webkit-border-radius: .3125rem;
+  -moz-border-radius: .3125rem;
+  -ms-border-radius: .3125rem;
+  -o-border-radius: .3125rem;
 }
-.header_nav a:hover{
+
+.header_nav a:hover {
   color: white;
 }
-.signup_btn:hover{
+
+.signup_btn:hover {
   color: white;
   background-color: #f60;
 }
 
-@media (max-width: 600px){
-  body{
+@media (max-width: 600px) {
+  body {
     font-size: 14px;
   }
-  .logo{
+
+  .logo {
     display: none;
   }
-  .logo_icon_wrapper{
-    margin-left:18px;
+
+  .logo_icon_wrapper {
+    margin-left: 18px;
   }
-  .header_nav{
-    margin-right: 18px ;
-    a{
+
+  .header_nav {
+    margin-right: 18px;
+
+    a {
       margin: .425rem;
     }
   }

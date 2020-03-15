@@ -10,7 +10,6 @@ import {
   FaGithub
 } from "react-icons/fa";
 
-
 class Login extends React.Component {
   constructor(props) {
     super(props);
@@ -23,7 +22,6 @@ class Login extends React.Component {
         <div className="login_flex_container">
           <div className="login_col_2_1">
             <form action="">
-              
               <div className="profile_wrapper">
                 <span className="icon">
                   <FaEnvelope />
@@ -36,17 +34,17 @@ class Login extends React.Component {
                 </span>
                 <input type="password" placeholder="Password" />
               </div>
-           
+
               <div className="profile_wrapper">
                 <input className="login_btn" type="submit" value="Log In" />
               </div>
             </form>
             <h5 className="login_bottom_heading">
-            Don't have an account? <Link to="/signup">Sign Up</Link>
+              Don't have an account? <Link to="/signup">Sign Up</Link>
             </h5>
           </div>
 
-          <div className="login_col_2_1 passportAuth_mobile_view" >
+          <div className="login_col_2_1 passportAuth_mobile_view">
             <a href="">
               <div className="login_passport_btn_wrapper">
                 <span className="icon">
@@ -63,7 +61,7 @@ class Login extends React.Component {
                   <FaGithub />
                 </span>
                 <div className="login_passport_btn github_btn">
-                Log In with Github
+                  Log In with Github
                 </div>
               </div>
             </a>
@@ -73,7 +71,7 @@ class Login extends React.Component {
                   <FaGoogle />
                 </span>
                 <div className="login_passport_btn google_btn">
-                Log In with google
+                  Log In with google
                 </div>
               </div>
             </a>

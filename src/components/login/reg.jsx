@@ -66,7 +66,7 @@ class Signup extends React.Component {
                   <FaGithub />
                 </span>
                 <div className="login_passport_btn github_btn">
-                Sign up with Github
+                  Sign up with Github
                 </div>
               </div>
             </a>
@@ -76,7 +76,7 @@ class Signup extends React.Component {
                   <FaGoogle />
                 </span>
                 <div className="login_passport_btn google_btn">
-                Sign up with google
+                  Sign up with google
                 </div>
               </div>
             </a>

@@ -22,7 +22,7 @@ class Tag extends React.Component {
   }
 
   render() {
-    return this.state.tags?(
+    return this.state.tags ? (
       <>
         <h4 className="tag_heading">
           <IoIosBookmark className="tag_icon" /> Topics
@@ -35,11 +35,11 @@ class Tag extends React.Component {
       </>
     ) : (
       <div className="loader_postition">
-      <div className="lds-facebook">
-        <div></div>
-        <div></div>
-        <div></div>
-      </div>
+        <div className="lds-facebook">
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
       </div>
     );
   }

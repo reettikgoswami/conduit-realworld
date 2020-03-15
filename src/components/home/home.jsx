@@ -7,7 +7,7 @@ import Feed from "./yourfeed";
 import GlobalFeed from "./globalfeed";
 import Tag from "./tag";
 
-import { Link  , NavLink} from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 class Home extends React.Component {
   constructor(props) {
@@ -21,20 +21,19 @@ class Home extends React.Component {
             <NavLink activeClassName="selected_tab" to="/" className="tab">
               <div className=" tab-style">your feed</div>
             </NavLink>
-            <NavLink  to="/" className="tab">
+            <NavLink to="/" className="tab">
               <div className="tab tab-style">Global feed</div>
             </NavLink>
           </div>
-           
-         <div className="article_container">
-         <Feed />
-         </div>  
+          <div className="articlePreview_container">
+            <Feed />
 
+            {/* <GlobalFeed/> */}
+          </div>
         </div>
         <div className="tag_container">
-        <Tag/>
+          <Tag />
         </div>
-         
       </div>
     );
   }
