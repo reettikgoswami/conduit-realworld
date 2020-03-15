@@ -17,9 +17,9 @@ class App extends React.Component{
     return(
       <>
       <Header />
-       <Home/>
-      {/* <Route path="/login" component={Login}/>
-      <Route path="/signup" component={Signup}/> */}
+      <Route exact path="/" component={Home}/>  
+      <Route path="/login" component={Login}/>
+      <Route path="/signup" component={Signup}/>
       </>
     )
   }

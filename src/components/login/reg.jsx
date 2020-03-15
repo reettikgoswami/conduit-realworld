@@ -20,7 +20,6 @@ class Signup extends React.Component {
     return (
       <div className="login_reg_container">
         <h3 className="Login_header">Sign Up on Contuit</h3>
-
         <div className="login_flex_container">
           <div className="login_col_2_1">
             <form action="">

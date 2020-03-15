@@ -1,6 +1,5 @@
 import React from "react"
-import {Link} from "react-router-dom";
-
+import {Link , NavLink} from "react-router-dom";
 
 import {FaCuttlefish} from "react-icons/fa";
 import "../../assets/stylesheets/header.scss"
@@ -21,11 +20,11 @@ class Header extends React.Component{
             </Link>
            <div>
           <nav className="header_nav">
-            <Link to="/">home</Link>
-            <Link to="">new post</Link>
-            <Link to="">setting</Link>
-            <Link to="/login">login</Link>
-            <Link to="/signup" className="signup_btn" >sign up</Link>
+            <NavLink to="/">home</NavLink>
+            <NavLink to="">new post</NavLink>
+            <NavLink to="">setting</NavLink>
+            <NavLink activeClassName="signup_btn" to="/login">login</NavLink>
+            <NavLink activeClassName="signup_btn" to="/signup" >sign up</NavLink>
           </nav>
            </div>
           </div> 
@@ -33,5 +32,4 @@ class Header extends React.Component{
     )
   }
 };
-
 export default Header
