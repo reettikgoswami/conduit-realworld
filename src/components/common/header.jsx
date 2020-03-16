@@ -22,7 +22,7 @@ class Header extends React.Component {
           <div>
             <nav className="header_nav">
               <NavLink to="/">home</NavLink>
-              <NavLink to="">new post</NavLink>
+              <NavLink to="/new">new post</NavLink>
               <NavLink to="">setting</NavLink>
               <NavLink activeClassName="signup_btn" to="/login">
                 login

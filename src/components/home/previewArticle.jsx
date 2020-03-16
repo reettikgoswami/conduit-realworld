@@ -1,23 +1,29 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 import "../../assets/stylesheets/home.scss";
-import { Link } from "react-router-dom";
+
+import { IoIosBookmark } from "react-icons/io";
 
 function PreviewArticle(props) {
   console.log(props.article);
   return (
     <Link>
       <div className="single_article_preview_wrapper">
-        <img src={props.article.img} alt="" />
+        <Link className="likes" href="">
+          <IoIosBookmark />
+        </Link>
+        <img
+          src="https://www.seoclerk.com/pics/550925-1fY25w1502215384.jpg"
+          alt="defautt"
+        />
         {props.article.tagList.map(tag => (
           <span className="article_tag_style">{tag}</span>
         ))}
         <h3 className="preview_article_heading">{props.article.title}</h3>
-        {/*  */}
         <p className="preview_article_description">
           {props.article.description}
         </p>
-
         <div className="author_info_wrapper">
           <span className="author_img_container">
             <img src={props.article.author.image} alt="" />

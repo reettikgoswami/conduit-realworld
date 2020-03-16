@@ -17,18 +17,23 @@ class Home extends React.Component {
     return (
       <div className="home_main_container home_main_flex">
         <div className="home_article_section">
+          
           <div className="tab_underline_container">
             <NavLink activeClassName="selected_tab" to="/" className="tab">
               <div className=" tab-style">your feed</div>
             </NavLink>
             <NavLink to="/" className="tab">
-              <div className="tab tab-style">Global feed</div>
+              <div className="tab tab-style" >Global feed</div>
+            </NavLink>
+            <NavLink to="/" className="tab">
+              <div className="tab tab-style" >tag</div>
             </NavLink>
           </div>
-          <div className="articlePreview_container">
-            <Feed />
 
-            {/* <GlobalFeed/> */}
+          <div className="articlePreview_container">
+            {/* <Feed /> */}
+
+            <GlobalFeed/>
           </div>
         </div>
         <div className="tag_container">

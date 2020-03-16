@@ -11,7 +11,7 @@ class Tag extends React.Component {
       tags: null
     };
   }
-
+   
   componentDidMount() {
     fetch("https://conduit.productionready.io/api/tags")
       .then(res => {
