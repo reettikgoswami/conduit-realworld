@@ -7,8 +7,9 @@ import { IoIosBookmark } from "react-icons/io";
 
 function PreviewArticle(props) {
   console.log(props.article);
+  let slug =`/article/${props.article.slug}`;
   return (
-    <Link>
+    <Link to={slug}>
       <div className="single_article_preview_wrapper">
         <Link className="likes" href="">
           <IoIosBookmark />
