@@ -11,7 +11,7 @@ class Tag extends React.Component {
       tags: null
     };
   }
-   
+  
   componentDidMount() {
     fetch("https://conduit.productionready.io/api/tags")
       .then(res => {
@@ -31,7 +31,8 @@ class Tag extends React.Component {
           {this.state.tags.map(tag => (
 
             // <a href={`/tag/${tag}`} className="tag_btn" >{tag}</a>
-            <Link to={`/tag/${tag}`} className="tag_btn">{tag}</Link>           
+            // handleSearchTag
+            <Link  to={`/tag/${tag}`} onClick={()=>this.props.handleSearchTag(tag)} className="tag_btn">{tag}</Link>           
          ))}
         </div>
       </>

@@ -25,9 +25,9 @@ class Home extends React.Component {
       this.setState({ activeTab: this.props.match.path, searchTag: "" });
     }
   }
-
-
-
+  handleSearchTag=(tag)=>{
+   this.setState({searchTag : tag , activeTab: tag});
+  } 
   checkActive = (match, location) => {
     if (!location) return false;
     const { pathname } = location;
@@ -35,6 +35,7 @@ class Home extends React.Component {
   };
 
   render() {
+
     return (
       <div className="home_main_container home_main_flex">
         <div className="home_article_section">
@@ -61,7 +62,6 @@ class Home extends React.Component {
             </NavLink>
           </div>
           <div className="articlePreview_container">
-
             <Route
               exact
               path="/"
@@ -82,22 +82,11 @@ class Home extends React.Component {
               render={()=><TagFeed tag={this.state.searchTag} />}
             />
 
-            {/* {this.state.activeTab == "/feed" ? (
-              <Feed />
-            ) : this.state.activeTab == "/" ? (
-              <GlobalFeed />
-            ) : (
-              <TagFeed tag={this.state.searchTag} />
-            )} */}
-
-            {/* <Feed /> */}
-            {/* <GlobalFeed/> */}
-            {/* <TagFeed/> */}
           </div>
         </div>
 
         <div className="tag_container">
-          <Tag />
+          <Tag handleSearchTag={this.handleSearchTag} />
         </div>
       </div>
     );
