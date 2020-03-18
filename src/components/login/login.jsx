@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link , withRouter } from "react-router-dom";
 
 import "../../assets/stylesheets/login-reg.scss";
 import {
@@ -10,7 +10,7 @@ import {
   FaGithub
 } from "react-icons/fa";
 
-function Login(){
+function Login(props){
  
   let email = React.useRef(null);
   let password = React.useRef(null);
@@ -27,11 +27,17 @@ function Login(){
       })
     })
       .then(res => res.json())
-      .then(userinfo => console.log("User info", userinfo))
+      .then(userinfo => {      
+        if(userinfo.errors){
+          console.log("error", userinfo.errors);   
+        }else{
+          props.history.push("/");
+          props.updateIsLoggedIn(true);
+          localStorage.setItem("conduit-token" , userinfo.user.token);
+        }
+      })
       .catch(err => console.log("err", err));
   }
-
-
     return (
       <div className="login_reg_container">
         <h3 className="Login_header">Log In to Contuit</h3>
@@ -59,7 +65,6 @@ function Login(){
               Don't have an account? <Link to="/signup">Sign Up</Link>
             </h5>
           </div>
-
           <div className="login_col_2_1 passportAuth_mobile_view">
             <a href="">
               <div className="login_passport_btn_wrapper">
@@ -95,7 +100,6 @@ function Login(){
         </div>
       </div>
     );
-  // }
 }
 
-export default Login;
+export default withRouter(Login);

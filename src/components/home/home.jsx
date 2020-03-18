@@ -1,10 +1,7 @@
 import React from "react";
-// import { Route } from "react-router-dom"
+import { Link, NavLink, Route } from "react-router-dom";
 
 import "../../assets/stylesheets/home.scss";
-import { Link, NavLink } from "react-router-dom";
-
-// import ArticleContainer from "./articleContainer";
 import Tag from "./tag";
 import Feed from "./yourfeed";
 import GlobalFeed from "./globalfeed";
@@ -18,9 +15,7 @@ class Home extends React.Component {
       searchTag: ""
     };
   }
-
   componentDidMount() {
-    console.log("kgxhugu", this.props.match.params);
     if (this.props.match.params.tag) {
       this.setState({
         activeTab: this.props.match.params.tag,
@@ -31,22 +26,15 @@ class Home extends React.Component {
     }
   }
 
-  // updateSearchTag=()=>{
-  //   if( this.state.searchTag !== this.props.match.params.tag){
-  //      this.setState({searchTag : this.props.match.params.tag , activeTab :this.props.match.params.tag});
-  //    }
-  // }
- 
+
+
   checkActive = (match, location) => {
-    if (!location) return false
+    if (!location) return false;
     const { pathname } = location;
-    console.log(pathname);
     return pathname === "/";
   };
 
   render() {
-    //  this.updateSearchTag();     
-    // console.log("search tag ", this.state.searchTag);
     return (
       <div className="home_main_container home_main_flex">
         <div className="home_article_section">
@@ -73,13 +61,34 @@ class Home extends React.Component {
             </NavLink>
           </div>
           <div className="articlePreview_container">
-            {this.state.activeTab == "/feed" ? (
+
+            <Route
+              exact
+              path="/"
+              component={
+                GlobalFeed
+              }
+            />
+            <Route
+              exact
+              path="/feed"
+              component={
+                Feed 
+              }
+            />
+            <Route
+              exact
+              path="/tag/:tag"
+              render={()=><TagFeed tag={this.state.searchTag} />}
+            />
+
+            {/* {this.state.activeTab == "/feed" ? (
               <Feed />
             ) : this.state.activeTab == "/" ? (
               <GlobalFeed />
             ) : (
               <TagFeed tag={this.state.searchTag} />
-            )}
+            )} */}
 
             {/* <Feed /> */}
             {/* <GlobalFeed/> */}

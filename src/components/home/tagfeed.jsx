@@ -13,6 +13,7 @@ class TagFeed extends React.Component {
   }
 
   componentDidMount() {
+    
     console.log("com" ,this.props);
     fetch(`https://conduit.productionready.io/api/articles?tag=${this.props.tag}&limit=6&offset=0`)
       .then(res => {

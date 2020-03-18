@@ -6,7 +6,6 @@ import "../../assets/stylesheets/home.scss";
 import { IoIosBookmark } from "react-icons/io";
 
 function PreviewArticle(props) {
-  console.log(props.article);
   let slug =`/article/${props.article.slug}`;
   return (
     <Link to={slug}>

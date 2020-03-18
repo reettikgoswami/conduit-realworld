@@ -20,17 +20,37 @@ class Header extends React.Component {
             <h1 className="logo">onduit</h1>
           </Link>
           <div>
-            <nav className="header_nav">
+           
+             {
+               this.props.isLoggedIn ?(
+                <nav className="header_nav">
               <NavLink to="/">home</NavLink>
               <NavLink to="/new">new post</NavLink>
-              <NavLink to="">setting</NavLink>
-              <NavLink activeClassName="signup_btn" to="/login">
+              <NavLink to="/user">setting</NavLink>
+              <NavLink to="/">profile</NavLink>
+              </nav>
+               ) : (
+                <nav className="header_nav">
+                <NavLink to="/">home</NavLink>
+                <NavLink activeClassName="signup_btn" to="/login">
                 login
               </NavLink>
               <NavLink activeClassName="signup_btn" to="/signup">
                 sign up
               </NavLink>
-            </nav>
+              </nav>
+               )
+             }
+              {/* <NavLink to="/">home</NavLink>
+              <NavLink to="/new">new post</NavLink>
+              <NavLink to="/user">setting</NavLink>
+              <NavLink activeClassName="signup_btn" to="/login">
+                login
+              </NavLink>
+              <NavLink activeClassName="signup_btn" to="/signup">
+                sign up
+              </NavLink> */}
+           
           </div>
         </div>
       </header>

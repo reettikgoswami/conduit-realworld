@@ -21,7 +21,6 @@ class GlobalFeed extends React.Component {
   }
   
   render() {
-    console.log("global feed a achi");
     return this.state.articles?(
       <>
         {this.state.articles.map(article => (

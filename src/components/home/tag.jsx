@@ -30,9 +30,8 @@ class Tag extends React.Component {
         <div className="tag_wrapper">
           {this.state.tags.map(tag => (
 
-            <a href={`/tag/${tag}`} className="tag_btn" >{tag}</a>
-            // <Link to={`/tag/${tag}`} className="tag_btn">{tag}</Link>
-            
+            // <a href={`/tag/${tag}`} className="tag_btn" >{tag}</a>
+            <Link to={`/tag/${tag}`} className="tag_btn">{tag}</Link>           
          ))}
         </div>
       </>
