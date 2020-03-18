@@ -10,12 +10,28 @@ import {
   FaGithub
 } from "react-icons/fa";
 
-class Login extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {};
+function Login(){
+ 
+  let email = React.useRef(null);
+  let password = React.useRef(null);
+  
+  function handalLogin() {
+    fetch(`https://conduit.productionready.io/api/users/login`, {
+      method: "POST",
+      headers: { "Content-type": "application/json" },
+      body: JSON.stringify({
+        user: {
+          email: email.current.value,
+          password: password.current.value
+        }
+      })
+    })
+      .then(res => res.json())
+      .then(userinfo => console.log("User info", userinfo))
+      .catch(err => console.log("err", err));
   }
-  render() {
+
+
     return (
       <div className="login_reg_container">
         <h3 className="Login_header">Log In to Contuit</h3>
@@ -26,17 +42,17 @@ class Login extends React.Component {
                 <span className="icon">
                   <FaEnvelope />
                 </span>
-                <input type="email" placeholder="Email" />
+                <input type="email" placeholder="Email" ref={email} />
               </div>
               <div className="profile_wrapper">
                 <span className="icon">
                   <FaLock />
                 </span>
-                <input type="password" placeholder="Password" />
+                <input type="password" placeholder="Password" ref={password} />
               </div>
 
               <div className="profile_wrapper">
-                <input className="login_btn" type="submit" value="Log In" />
+                <input className="login_btn" type="button" onClick={handalLogin} value="Log In" />
               </div>
             </form>
             <h5 className="login_bottom_heading">
@@ -79,7 +95,7 @@ class Login extends React.Component {
         </div>
       </div>
     );
-  }
+  // }
 }
 
 export default Login;
