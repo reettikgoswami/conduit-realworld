@@ -66,7 +66,7 @@ function Login(props){
             </h5>
           </div>
           <div className="login_col_2_1 passportAuth_mobile_view">
-            <a href="">
+            <Link to="/signup">
               <div className="login_passport_btn_wrapper">
                 <span className="icon">
                   <FaFacebookF />
@@ -75,8 +75,8 @@ function Login(props){
                   Log In with Facebook
                 </div>
               </div>
-            </a>
-            <a href="">
+            </Link>
+            <Link to="/signup">
               <div className="login_passport_btn_wrapper">
                 <span className="icon">
                   <FaGithub />
@@ -85,8 +85,8 @@ function Login(props){
                   Log In with Github
                 </div>
               </div>
-            </a>
-            <a href="">
+            </Link>
+            <Link to="/signup">
               <div className="login_passport_btn_wrapper">
                 <span className="icon_g">
                   <FaGoogle />
@@ -95,7 +95,7 @@ function Login(props){
                   Log In with google
                 </div>
               </div>
-            </a>
+            </Link>
           </div>
         </div>
       </div>

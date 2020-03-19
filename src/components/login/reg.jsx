@@ -71,7 +71,7 @@ function Signup() {
           </h5>
         </div>
         <div className="login_col_2_1 passportAuth_mobile_view">
-          <a href="">
+          <Link to="/signup">
             <div className="login_passport_btn_wrapper">
               <span className="icon">
                 <FaFacebookF />
@@ -80,8 +80,8 @@ function Signup() {
                 Sign up with Facebook
               </div>
             </div>
-          </a>
-          <a href="">
+          </Link>
+          <Link to="/signup">
             <div className="login_passport_btn_wrapper">
               <span className="icon">
                 <FaGithub />
@@ -90,8 +90,8 @@ function Signup() {
                 Sign up with Github
               </div>
             </div>
-          </a>
-          <a href="">
+          </Link>
+          <Link to="/signup">
             <div className="login_passport_btn_wrapper">
               <span className="icon_g">
                 <FaGoogle />
@@ -100,7 +100,7 @@ function Signup() {
                 Sign up with google
               </div>
             </div>
-          </a>
+          </Link>
         </div>
       </div>
     </div>

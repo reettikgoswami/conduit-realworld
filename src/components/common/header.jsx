@@ -2,14 +2,11 @@ import React from "react";
 import { Link, NavLink } from "react-router-dom";
 
 import { FaCuttlefish } from "react-icons/fa";
-import "../../assets/stylesheets/header.scss";
+// import "../../assets/stylesheets/header.scss";
 
 class Header extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      name: "reettik"
-    };
   }
   render() {
     return (
@@ -26,8 +23,8 @@ class Header extends React.Component {
                 <nav className="header_nav">
               <NavLink to="/">home</NavLink>
               <NavLink to="/new">new post</NavLink>
-              <NavLink to="/user">setting</NavLink>
-              <NavLink to="/">profile</NavLink>
+              <NavLink to="/setting">setting</NavLink>
+              <NavLink to="/user">profile</NavLink>
               </nav>
                ) : (
                 <nav className="header_nav">

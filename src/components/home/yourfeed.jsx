@@ -1,7 +1,6 @@
 import React from "react";
 
 import "../../assets/stylesheets/home.scss";
-
 import PreviewArticle from "./previewArticle";
 
 class Feed extends React.Component {
@@ -13,16 +12,18 @@ class Feed extends React.Component {
   }
 
   componentDidMount() {
-    fetch("https://conduit.productionready.io/api/articles/feed?limit=2&offset=0")
+    fetch(
+      "https://conduit.productionready.io/api/articles/feed?limit=2&offset=0"
+    )
       .then(res => {
         return res.json();
       })
-      .then(articles => this.setState({articles : articles.articles}))
+      .then(articles => this.setState({ articles: articles.articles }))
       .catch(err => console.log(err));
   }
   
   render() {
-    return this.state.articles?(
+    return this.state.articles ? (
       <>
         {this.state.articles.map(article => (
           <PreviewArticle article={article} />
