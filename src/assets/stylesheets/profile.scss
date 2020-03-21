@@ -16,11 +16,7 @@
   justify-content: space-around;
   flex-wrap: wrap;
   padding: 20px 10px;
-  .profile_card{
-    width: 35%;
-    // height: 40px;  
-    border: 1px solid rgb(136, 134, 130);
-  }
+
   .fav_created_article_container{
    width: 60%;
    height: 40px;
@@ -38,33 +34,63 @@
   margin-top: 20px;
   width: 100%;
   height: 100%;
-  border: 1px solid black;
+  border: 1.5px solid #323754;
   border-radius: 50%;
 }
 }
 
-// .profile_card{
-//   background-color: #4C9CDF;
-//   max-width: 700px;
-//   // height: 300px;
-//   margin: 0 auto;
-//   margin-top: 35px;
-//   position: relative;
-//   .name{
-//     text-align: center;
-//     margin-top: 35px;
-//   }
-// }
-// .profile_img_container{
-//   height: 150px;
-//   width: 150px;
-//   border-radius: 3px;
-//   margin: 0 auto;
-//   img{
-//  margin-top: 20px;
-//  width: 100%;
-//  height: 100%;
-//  border: 1px solid black;
-//  border-radius: 50%;
-// }
-// }
+
+
+
+.profile_card{
+  width: 35%;
+  box-shadow:0 0 11px -1px rgba(87, 87, 87, 0.3);
+  position: relative; 
+  .name{
+    color: #4C9CDF;
+    text-align: center;
+    margin-top: 35px;
+    font-size: 18px;
+  }
+  .bio{
+    padding: 20px 35px;
+    text-align: center;
+    font-size: 14px;
+    color: rgb(80, 80, 80);
+  }
+  .follow_btn{
+    height: 34px;
+    width: 120px;
+  }
+}
+.follower_following_container{
+   display: flex;
+   justify-content: center;
+   .follow_count_wrapper{
+      display: flex;
+      flex-direction: column;
+      text-align: center;  
+      padding: 4px 10px;
+   } 
+}
+.follow_count{
+  font-size: 18px;
+  font-weight: 600;
+  text-transform: uppercase;
+} 
+.span_follow{
+  padding-top: 7px;
+  font-size: 12px;
+  text-transform: uppercase;
+}
+.edit_logout_wrapper{
+  position: absolute;
+  right: 10px;
+  top: 10px; 
+  
+  font-size: 24px;
+  a{
+    color: #4C9CDF;
+    margin-left: 9px;
+  }
+}

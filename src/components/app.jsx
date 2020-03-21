@@ -12,7 +12,7 @@ import ViewArticle from "./../components/article/viewArticle";
 import Profile from "./../components/user/profile";
 import UpdateProfile from "./user/updateprofile";
 
-function RequiredAuthRoute(props) {
+function RequiredAuthRoute(property) {
   return (
     <Switch>
       <Route exact path="/" component={Home} />
@@ -26,7 +26,7 @@ function RequiredAuthRoute(props) {
       <Route
         path="/user"
         render={props => (
-          <Profile logoutHandle={props.logoutHandle} {...props} />
+          <Profile logoutHandle={property.logoutHandle} {...props} />
         )}
       />
 
@@ -66,7 +66,7 @@ class App extends React.Component {
   };
 
   logoutHandle = () => {
-    console.log("hjcwhgvhvhgv");
+    console.log("check history",this.props);
     localStorage.removeItem("conduit-token");
     this.props.history.push("/");
     this.setState({ isLoggedIn: false });
