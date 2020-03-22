@@ -1,4 +1,5 @@
 import React from "react";
+import {Link} from "react-router-dom";
 
 import "../../assets/stylesheets/newArticle.scss";
 
@@ -7,25 +8,25 @@ class CreateArticle extends React.Component {
     super(props);
     this.setState = {};
   }
-
   render() {
     return (
-      <div className="article">
-        <center><h1>New Article</h1></center>
+      <div className="article_create">
+        <h1 >New Article</h1>
         <form action="">
-          <input type="text" placeholder="article title" />
-          <input type="text" placeholder="what this atticle about" />
+          <input type="text" placeholder="Article title" />
+          <input type="text" placeholder="What this article about" />
+          <input type="text" placeholder="Article Thumbnail URL" />
           <textarea
             name=""
             id=""
             cols="30"
             rows="20"
             
-            placeholder="write your article"
+            placeholder="Write your article"
           ></textarea>
 
           <input type="text" placeholder="Enter tags" />
-          <input type="submit" value="publish article" />
+         <Link className="publish_btn"><input type="submit" value="publish" /></Link> 
         </form>
       </div>
     );

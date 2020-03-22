@@ -12,7 +12,7 @@ class GlobalFeed extends React.Component {
   }
 
   componentDidMount() {
-    fetch("https://conduit.productionready.io/api/articles?limit=7&offset=0")
+    fetch("https://conduit.productionready.io/api/articles?limit=5&offset=0")
       .then(res => {
         return res.json();
       })
