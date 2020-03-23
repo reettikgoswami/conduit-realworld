@@ -1,19 +1,42 @@
 import React, { Component } from "react";
-import { withRouter, NavLink } from "react-router-dom";
+import { withRouter, NavLink, Route } from "react-router-dom";
 
 import { Link } from "react-router-dom";
 import { FaUserEdit } from "react-icons/fa";
 import { AiOutlineLogout } from "react-icons/ai";
 
 import GlobalFeed from "../home/globalfeed";
+import MyArticle from "../home/myarticle";
+import FavArticle from "../home/favarticle";
 
 class Profile extends Component {
   constructor(props) {
     super(props);
+    this.state = {
+      profile: {}
+    };
+  }
+  componentDidMount() {
+    if (localStorage["conduit-token"]) {
+      fetch(" https://conduit.productionready.io/api/profiles/reettik", {
+        method: "GET",
+        headers: {
+          authorization: `Token ${localStorage["conduit-token"]}`
+        }
+      })
+        .then(res => {
+          return res.json();
+        })
+        .then(user => {
+          this.setState({ profile: user.profile });
+        })
+        .catch(err => {
+          console.log(err);
+        });
+    }
   }
 
   render() {
-    console.log(this.props);
     return (
       <div className="profile_container">
         <div className="profile_inner_container">
@@ -33,7 +56,7 @@ class Profile extends Component {
                 alt=""
               />
             </div>
-            <h2 className="name">Reettik_Goswami</h2>
+            <h2 className="name">{this.state.profile.username}</h2>
             <p className="bio">
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa
               quaerat cum ea accusantium expedita blanditiis sequi ipsum veniam,
@@ -58,14 +81,17 @@ class Profile extends Component {
           <div className="fav_created_article_container">
             <div className="tab_underline_container">
               <NavLink
-                to="/feed"
+                exact
+                to="/user"
                 activeClassName="selected_tab"
                 className="tab"
               >
                 <div className="tab-style">My Articles</div>
               </NavLink>
+
               <NavLink
-                to="/"
+                exact
+                to="/user/favouriteArticles"
                 activeClassName="selected_tab"
                 isActive={this.checkActive}
                 className="tab"
@@ -75,7 +101,10 @@ class Profile extends Component {
             </div>
 
             <div className="profile_articla_wrapper">
-              <GlobalFeed />
+              <Route exact path="/user" component={MyArticle} />
+
+              <Route exact path="/user/favouriteArticles" component={FavArticle} />
+
             </div>
           </div>
         </div>

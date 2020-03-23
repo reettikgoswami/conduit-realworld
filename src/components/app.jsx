@@ -23,12 +23,23 @@ function RequiredAuthRoute(property) {
       <Route path="/article/:slug" component={ViewArticle} />
       {/* <Route path="/user" component={Profile} /> */}
 
+
       <Route
+        exact
         path="/user"
         render={props => (
           <Profile logoutHandle={property.logoutHandle} {...props} />
         )}
       />
+  
+   <Route
+        exact
+        path="/user/favouriteArticles"
+        render={props => (
+          <Profile logoutHandle={property.logoutHandle} {...props} />
+        )}
+      />
+   
 
       <Route path="*" render={() => <h1>404 page not found</h1>}></Route>
     </Switch>
