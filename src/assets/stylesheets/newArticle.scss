@@ -121,7 +121,18 @@ input[type=submit]{
 .publish_btn{
   display: block;
   position: relative;
-  // right: 0px;
 }
 
-
+.error_massage_container{
+  padding: 10px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  font-size: 12px;
+  
+}
+.error_massage{
+ padding: 0px 5px 0px 5px;
+ line-height: 1.5;
+ color: red;
+}

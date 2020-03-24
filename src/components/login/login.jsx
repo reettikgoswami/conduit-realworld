@@ -31,9 +31,11 @@ function Login(props){
         if(userinfo.errors){
           console.log("error", userinfo.errors);   
         }else{
+          console.log(userinfo);
           props.history.push("/");
           props.updateIsLoggedIn(true);
           localStorage.setItem("conduit-token" , userinfo.user.token);
+          localStorage.setItem("username" , userinfo.user.username);
         }
       })
       .catch(err => console.log("err", err));

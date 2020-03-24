@@ -65,17 +65,17 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      isLoggedIn: false
+      isLoggedIn: false, 
     };
   }
 
   updateIsLoggedIn = value => {
     this.setState({ isLoggedIn: value });
   };
-
   logoutHandle = (props) => {
     console.log("check history", props);
     localStorage.removeItem("conduit-token");
+    localStorage.removeItem("username");
     props.history.push("/");
     this.setState({ isLoggedIn: false });
   };

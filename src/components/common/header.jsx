@@ -24,7 +24,7 @@ class Header extends React.Component {
               <NavLink to="/">home</NavLink>
               <NavLink to="/new">new post</NavLink>
               <NavLink to="/setting">setting</NavLink>
-              <NavLink to="/user">profile</NavLink>
+               <NavLink to="/user">{localStorage.username}</NavLink>
               </nav>
                ) : (
                 <nav className="header_nav">
@@ -38,15 +38,7 @@ class Header extends React.Component {
               </nav>
                )
              }
-              {/* <NavLink to="/">home</NavLink>
-              <NavLink to="/new">new post</NavLink>
-              <NavLink to="/user">setting</NavLink>
-              <NavLink activeClassName="signup_btn" to="/login">
-                login
-              </NavLink>
-              <NavLink activeClassName="signup_btn" to="/signup">
-                sign up
-              </NavLink> */}
+              
            
           </div>
         </div>

@@ -21,6 +21,7 @@ class Profile extends Component {
       fetch(" https://conduit.productionready.io/api/profiles/reettik", {
         method: "GET",
         headers: {
+          "Content-Type": "application/json",
           authorization: `Token ${localStorage["conduit-token"]}`
         }
       })
@@ -51,7 +52,6 @@ class Profile extends Component {
                 <AiOutlineLogout />
               </Link>
             </div>
-
             <div className="profile_img_container">
               <img
                 src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRDMnknvjhm9wxl0D8byJhVMEEKeUk6mworMT_XIus4oWmoe1RY"
@@ -74,12 +74,10 @@ class Profile extends Component {
                 <span className="span_follow">follower</span>
               </div>
             </div>
-
             <Link className="follow_btn_center">
               <button className="follow_btn">follow</button>{" "}
             </Link>
           </div>
-
           <div className="fav_created_article_container">
             <div className="tab_underline_container">
               <NavLink
