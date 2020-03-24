@@ -2,7 +2,7 @@ import React from "react";
 import { Link, NavLink } from "react-router-dom";
 
 import { FaCuttlefish } from "react-icons/fa";
-// import "../../assets/stylesheets/header.scss";
+import "../../assets/stylesheets/header.scss";
 
 class Header extends React.Component {
   constructor(props) {

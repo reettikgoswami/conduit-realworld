@@ -11,9 +11,6 @@ class ViewArticle extends Component {
     };
   }
   componentDidMount() {
-    console.log(this.props.match.params.slug);
-    // dystopia-9puip1?_k=0cir4l
-    // ${this.props.match.params.slug}
     fetch(
       `https://conduit.productionready.io/api/articles/${this.props.match.params.slug}`
     )

@@ -21,8 +21,6 @@ function RequiredAuthRoute(property) {
       <Route path="/setting" component={UpdateProfile} />
       <Route path="/new" component={CreateArticle} />
       <Route path="/article/:slug" component={ViewArticle} />
-      {/* <Route path="/user" component={Profile} /> */}
-
 
       <Route
         exact
@@ -31,15 +29,14 @@ function RequiredAuthRoute(property) {
           <Profile logoutHandle={property.logoutHandle} {...props} />
         )}
       />
-  
-   <Route
+
+      <Route
         exact
         path="/user/favouriteArticles"
         render={props => (
           <Profile logoutHandle={property.logoutHandle} {...props} />
         )}
       />
-   
 
       <Route path="*" render={() => <h1>404 page not found</h1>}></Route>
     </Switch>
@@ -76,10 +73,10 @@ class App extends React.Component {
     this.setState({ isLoggedIn: value });
   };
 
-  logoutHandle = () => {
-    console.log("check history",this.props);
+  logoutHandle = (props) => {
+    console.log("check history", props);
     localStorage.removeItem("conduit-token");
-    this.props.history.push("/");
+    props.history.push("/");
     this.setState({ isLoggedIn: false });
   };
 

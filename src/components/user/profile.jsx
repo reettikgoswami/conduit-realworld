@@ -5,7 +5,6 @@ import { Link } from "react-router-dom";
 import { FaUserEdit } from "react-icons/fa";
 import { AiOutlineLogout } from "react-icons/ai";
 
-import GlobalFeed from "../home/globalfeed";
 import MyArticle from "../home/myarticle";
 import FavArticle from "../home/favarticle";
 
@@ -16,6 +15,7 @@ class Profile extends Component {
       profile: {}
     };
   }
+
   componentDidMount() {
     if (localStorage["conduit-token"]) {
       fetch(" https://conduit.productionready.io/api/profiles/reettik", {
@@ -28,6 +28,7 @@ class Profile extends Component {
           return res.json();
         })
         .then(user => {
+          console.log("user detail" ,  user);
           this.setState({ profile: user.profile });
         })
         .catch(err => {
@@ -37,6 +38,7 @@ class Profile extends Component {
   }
 
   render() {
+    console.log("history check " , this.props);
     return (
       <div className="profile_container">
         <div className="profile_inner_container">
@@ -45,7 +47,7 @@ class Profile extends Component {
               <Link to="/setting">
                 <FaUserEdit />
               </Link>
-              <Link onClick={this.props.logoutHandle}>
+              <Link onClick={()=>this.props.logoutHandle(this.props)}>
                 <AiOutlineLogout />
               </Link>
             </div>
