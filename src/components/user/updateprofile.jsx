@@ -10,39 +10,67 @@ class UpdateProfile extends Component {
       image: "",
       bio: "",
       email: "",
-      errorMassage: ["reettik" , "hjcsvhjcvjsh"]
+      errorMassage: []
     };
-   
+
     this.handelSubmit = this.handelSubmit.bind(this);
     this.handelUsername = this.handelUsername.bind(this);
     this.handelImage = this.handelImage.bind(this);
     this.handelBio = this.handelBio.bind(this);
     this.handelEmail = this.handelEmail.bind(this);
-
   }
 
-  handelSubmit=(event)=>{
-    console.log(this.state);
-    
+  handelSubmit = event => {
+    fetch("https://conduit.productionready.io/api/user", {
+      method: "PUT",
+      headers: {
+        "content-type": "application/json",
+         authorization: `Token ${localStorage["conduit-token"]}`
+      },
+      body: JSON.stringify({
+        user: {
+          email: this.state.email,
+          username: this.state.username,
+          bio: this.state.bio,
+          image: this.state.image
+        }
+      })
+    })
+      .then(res => res.json())
+      .then(updatedUserInfo => {
+        if(updatedUserInfo.errors){     
+         let objKeys = Object.keys(updatedUserInfo.errors);
+         let errorMassage = [];
+         objKeys.forEach(key=>{
+          errorMassage.push(key +" "+updatedUserInfo.errors[key]);
+         })
+         this.setState({errorMassage : errorMassage});
+         console.log(errorMassage);
+        }else{
+
+        this.props.history.push("")
+          
+        
+        }  
+      })
+      .catch(err => {
+        console.log(err);
+      });
+  };
 
 
-
-
-  }
-  handelUsername = (event)=>{
-    this.setState({ username : event.target.value ,  errorMassage: false});
-  }
-  handelImage= (event)=>{
-    this.setState({ image : event.target.value ,  errorMassage: false});
-  }
-  handelBio = (event)=>{
-    this.setState({ bio : event.target.value ,  errorMassage: false});
-  }
-  handelEmail = (event)=>{
-    this.setState({ email : event.target.value ,  errorMassage: false});
-  }
-
-
+  handelUsername = event => {
+    this.setState({ username: event.target.value, errorMassage: false });
+  };
+  handelImage = event => {
+    this.setState({ image: event.target.value, errorMassage: false });
+  };
+  handelBio = event => {
+    this.setState({ bio: event.target.value, errorMassage: false });
+  };
+  handelEmail = event => {
+    this.setState({ email: event.target.value, errorMassage: false });
+  };
 
   componentDidMount() {
     fetch("https://conduit.productionready.io/api/user", {
@@ -54,15 +82,15 @@ class UpdateProfile extends Component {
     })
       .then(res => res.json())
       .then(userinfo => {
-        if(userinfo.errors){
-            this.setState({errorMassage : userinfo.errors })
-        }else{
-        this.setState({
-          username: userinfo.user.username,
-           image : userinfo.user.image,
-           bio : userinfo.user.bio ,
-           email : userinfo.user.email
-        });
+        if (userinfo.errors) {
+          this.setState({ errorMassage: userinfo.errors });
+        } else {
+          this.setState({
+            username: userinfo.user.username,
+            image: userinfo.user.image,
+            bio: userinfo.user.bio,
+            email: userinfo.user.email
+          });
         }
       })
       .catch(err => {
@@ -75,8 +103,18 @@ class UpdateProfile extends Component {
       <div className="update_profile_wrapper">
         <h1>Update Profile</h1>
         <form action="">
-          <input type="text" value={this.state.image} onChange={this.handelImage}  placeholder="URL of profile picture" />
-          <input type="text" value={this.state.username} onChange={this.handelUsername} placeholder="Username" />
+          <input
+            type="text"
+            value={this.state.image}
+            onChange={this.handelImage}
+            placeholder="URL of profile picture"
+          />
+          <input
+            type="text"
+            value={this.state.username}
+            onChange={this.handelUsername}
+            placeholder="Username"
+          />
           <textarea
             name=""
             id=""
@@ -86,24 +124,25 @@ class UpdateProfile extends Component {
             onChange={this.handelBio}
             placeholder="Short bio about you"
           ></textarea>
-          <input type="text" value={this.state.email} onChange={this.handelEmail} placeholder="Email" />
-          <Link className="publish_btn">
-
-       
-          {/* {this.state.errorMassage ? (
+          <input
+            type="text"
+            value={this.state.email}
+            onChange={this.handelEmail}
+            placeholder="Email"
+          />
+          {this.state.errorMassage ? (
             <div className="error_massage_container">
               {this.state.errorMassage.map(error => (
-                <span className="error_massage">{error}</span>
-              ))}{" "}
-              <span className="error_massage"> should not be empty field</span>{" "}
+                <div className="error_massage">{error}</div>
+              ))}
+              {/* <span className="error_massage"> should not be empty field</span>{" "} */}
             </div>
           ) : (
             ""
-          )} */}
-   
+          )}
 
-
-
+          <Link className="publish_btn">
+            
             <input type="submit" value="Update" onClick={this.handelSubmit} />
           </Link>
         </form>
