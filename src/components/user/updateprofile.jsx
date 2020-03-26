@@ -48,9 +48,7 @@ class UpdateProfile extends Component {
          console.log(errorMassage);
         }else{
 
-        this.props.history.push("")
-          
-        
+        this.props.history.push("");    
         }  
       })
       .catch(err => {

@@ -11,6 +11,7 @@ import Home from "./../components/home/home";
 import ViewArticle from "./../components/article/viewArticle";
 import Profile from "./../components/user/profile";
 import UpdateProfile from "./user/updateprofile";
+import PageNotFound from  "./../components/common/404"
 
 function RequiredAuthRoute(property) {
   return (
@@ -38,7 +39,7 @@ function RequiredAuthRoute(property) {
         )}
       />
 
-      <Route path="*" render={() => <h1>404 page not found</h1>}></Route>
+      <Route path="*" component={PageNotFound} />
     </Switch>
   );
 }
@@ -56,7 +57,7 @@ function NotRequiredAuthRoute(property) {
         )}
       />
       <Route path="/signup" component={Signup} />
-      <Route path="*" render={() => <h1>404 page not found</h1>}></Route>
+      <Route path="*" component={PageNotFound} />
     </Switch>
   );
 }
